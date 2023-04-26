@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>interactive comment section</title>
+  </head>
+  <body class="loading">
+    <main class="container" data-comments>
+    </main>
+
+    <section class="add-comment-section container">
+      <img
+        src="images/avatars/image-juliusomo.png"
+        class="user-img"
+        loading="lazy"
+      />
+      <textarea
+        class="commnet-text"
+        data-send
+        placeholder="Add a comment..."
+      ></textarea>
+      <button class="add-comment-btn" data-add-comment>send</button>
+    </section>
+
+    <div class="hystmodal" id="myModal" aria-hidden="true">
+      <div class="hystmodal__wrap">
+          <div class="hystmodal__window" role="dialog" aria-modal="true">
+            <h2 class="modal-header">Delet comment</h2>
+            <p class="modal-text">Are you sure you want to delete this comment? This will remove the comment and can't be undone.</p>
+            <div>
+              <button class="close-modal" data-hystclose>no, cancel</button>
+              <button  class="delete-btn" data-hystclose>yes, delete</button>
+            </div>
+          </div>
+      </div>
+  </div>
+
+    <template data-curretn-user-comment-card>
+      <div data-card data-id="">
+        <section class="comment-section">
+          <div class="comment-card" >
+            <div class="upvote-downvote" data-id="">
+              <img  data-upvoted="" class="upvote-btn" loading="lazy">
+              <span class="upvotes" data-upvotes></span>
+              <img  class="downvote-btn" data-downvoted="" alt="" loading="lazy">
+            </div>
+            <div>
+              <div class="comment-info">
+                <div class="user-info">
+                  <img 
+                  loading="lazy"
+                    class="user-img"
+                    data-img
+                  />
+                  <span class="name" data-name></span>
+                  <span class="you">you</span>
+                  <span class="comment-date" data-date></span>
+                </div>
+                <div class="edit-delete">
+                  <div class="delete">
+                    <img loading="lazy" data-delete-icon /> 
+                    <button class="show-modal" data-hystmodal="#myModal" data-id="" data-type="comment">
+                      Delete
+                    </button>
+                  </div>
+                  <div class="edit">
+                    <img  loading="lazy" data-edit-icon />
+                    <button class="edit-btn" data-edit="edit" data-id="">
+                      Edit
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="comment">
+                <p data-comment></p>
+                <textarea class="edit-comment hide"></textarea>
+              </div>
+              <button id="update-btn" class="update-btn hide" data-id=""> update</button>
+            </div>
+          </div>
+        </section>
+        <section class="reply-section" data-id="">
+        </section>
+      </div>
+    </template>
+
+    <template data-user-comment-card>
+      <div data-card data-id="">
+        <section class="comment-section" >
+          <div class="comment-card" >
+            <div class="upvote-downvote" data-id="">
+                <img loading="lazy" class="upvote-btn" data-upvoted="" alt="upvote">
+              <span class="upvotes" data-upvotes></span>
+                <img class="downvote-btn" data-downvoted=""  alt="downvote">
+            </div>
+            <div>
+              <div class="comment-info">
+                <div class="user-info">
+                  <img loading="lazy"
+                    class="user-img"
+                    data-img
+                  />
+                  <span class="name" data-name></span>
+                  <span class="comment-date" data-date></span>
+                </div>
+                <div class="reply">
+                  <button data-show-reply-card="show" data-id="">
+                    <img loading="lazy" data-show-reply-card="show" data-id="" data-reply-icon src="images/icon-reply.svg" alt="reply" /> Reply
+                  </button>
+                </div>
+              </div>
+              <div class="comment"> <p data-comment></p>
+              </div>
+            </div>
+          </div>
+          <section data-reply-eara="" class="add-reply-section hide-form">
+            <form>
+              <img
+              data-reply-eara-img
+              class="user-img"
+              loading="lazy"
+            />
+            <textarea data-textarea placeholder="Add a reply..."></textarea>
+            <input type="submit" data-name="" data-id="" class="add-reply-btn" value="Reply">
+            </form>
+          </section>
+        </section>
+        <section class="reply-section" data-id="">
+        </section>
+      </div>
+    </template>
+
+    <template data-user-reply-comment-card>
+    <div class="reply-comment-card" data-id="" data-card>
+      <div class="comment-card" >
+        <div class="upvote-downvote" data-id=""> 
+          <img loading="lazy" class="upvote-btn" data-reply="reply" data-upvoted="" alt="">
+          <span class="upvotes" data-upvotes></span>
+          <img loading="lazy" class="downvote-btn" data-reply="reply" data-downvoted="" alt="">
+        </div>
+        <div>
+          <div class="comment-info">
+            <div class="user-info">
+              <img
+              loading="lazy"
+                class="user-img"
+                data-img
+              />
+              <span class="name" data-name></span>
+              <span class="comment-date" data-date></span>
+            </div>
+            <div class="reply">
+              <button data-show-reply-card="show" data-id="">
+                <img data-show-reply-card="show" data-id="" data-reply-icon alt="reply" loading="lazy" /> Reply
+              </button>
+            </div>
+          </div>
+          <div class="comment">
+            <span class="reply-to">@</span><span class="reply-to" data-reply-to></span>
+            <p data-comment>
+            </p>
+          </div>
+        </div>
+      </div>
+      <section data-reply-eara="" class="add-reply-section hide-form">
+        <form >
+          <img
+          loading="lazy"
+          data-reply-eara-img
+          class="user-img"
+        />
+        <textarea data-textarea placeholder="Add a reply..."></textarea>
+        <input type="submit" data-id="" data-name=""  class="add-reply-to-a-reply-btn" value="Reply">
+        </form>
+      </section>
+    </div>
+    </template> 
+
+    <template data-currnt-user-reply-comment-card>
+      <div class="reply-comment-card" data-id="">
+        <div class="comment-card" >
+          <div class="upvote-downvote" data-id="">
+            <img loading="lazy" class="upvote-btn" data-reply="reply"  data-upvoted="" alt="">
+            <span class="upvotes" data-upvotes></span>
+            <img loading="lazy" class="downvote-btn" data-reply="reply" data-downvoted="" alt="">
+          </div>
+          <div>
+            <div class="comment-info">
+              <div class="user-info">
+                <img
+                loading="lazy"
+                  class="user-img"
+                  data-img
+                />
+                <span class="name" data-name></span>
+                <span class="you">you</span>
+                <span class="comment-date" data-date></span>
+              </div>
+              <div class="edit-delete">
+                <div class="delete">
+                  <img loading="lazy"  data-delete-icon /> 
+                  <button class="show-modal" data-hystmodal="#myModal" data-id="" data-type="reply">
+                    Delete
+                  </button>
+                </div>
+                <div class="edit">
+                  <img loading="lazy" data-edit-icon />
+                  <button class="edit-btn" data-edit="edit" data-id="">
+                    Edit
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="comment">
+              <span class="reply-to">@</span><span class="reply-to" data-reply-to></span>
+              <p data-comment></p>
+              <textarea class="edit-comment hide"></textarea>
+            </div>
+            <button id="update-reply-btn" class="update-btn .update-reply-btn hide" data-id=""> update</button>
+          </div>
+        </div>
+      </div>
+    </template>
+    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/modal.js"></script>
+  </body>
+</html>
+
+
