@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>interactive comment section</title>
+    <script type="module" crossorigin src="/interactive-comments-section/assets/index-5f49022d.js"></script>
+    <link rel="stylesheet" href="/interactive-comments-section/assets/index-0bfd7c97.css">
+  </head>
+  <body class="loading">
+    <main class="container" data-comments>
+    </main>
+
+    <section class="add-comment-section container">
+      <img
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAC+lBMVEVHcEyBcF21r66omJKml5mzoI6vlnqpi3Wnim2ef2Oae1KcfV6RelmIdWekmYu3pJCznouwmH2pkHShh2igflOZfESTeTqOdDp9cVKchnCrjnisknuni3iNdzN2bEiBbGFiTUJtRz6AY1CDa1iTdWedgGWQczVQMyw/KiFcPjV/YliKYVyYeHKPamOYe2KNgGxKJx54VVCofneVfVKjilSahU+hhEsaEw86HhctGRVuU0hgTC6ag1uhjl2tmHGWhnFtVTWFajyBjIFdMyiOcUF9YTdfVUeAUUaVZVqfaWCocWuZZmB4Rz2PeFJNOimugn64f33AjYzFlpXHnp3PqanWra3atbXgvL3mwcGxc3Q4MCa7lZPLpKPryMnz0NGLcU9SQi1MPTC/m5rJqKrEoqL63N2QeElYRyxEOS2ijIuOdnFTSTeTeVqxk5Oxi4nOsbG4joyCdkVuYTupl2mwiIKMTU5bJR6meXOtoJlLOy5ENCqReVGcgIRoPC6Sam21oaWKfGNENSpJP0B3Y1aGc2uhcWlgWVqZjn4sJyIlHxuRYFZaLyelnZidl5OIWk+jdm+Sf36qpaWjoqLWurzFe3izqqakq6qLPjKcb2VrZFFeWUy0r7G1tba2trq8u7+3ur+tsribS0CkkpRWWkxsZ2x6cW7DurnAwcXCxMvIyMzGztW6vcSWkI6bWFd9eXiYi4qGgH1udWl/gIfO0NXT193I092+yNK6wsuwt8GPn5JsKyOPiIyimp6Wk5aGjJeNkJisqazR2+SWo5p7NCqfo6yOlZ+Fh46lp6ra5OyprbehqLKXnKWJj52xrbSnYmu9tbNycnqKiZJpYWOaYWS7l6U/NzhSTU9qcG+ETlPFwLzVzsU3Mi0xLyYrJiGKl4rI2su2yLzJw8FJSj690cKuwrOmuqt4g3pNTkIoJB1kal+esqFfZFmBi4Nnb2NaYFI8PTFxe3CenZdRVEZfb1i7bWTBv8VAQDa1YljEvLpERDl5k3ZyiGyrWE1aYVZAeS5hAAAA/nRSTlMAEGKBpc/k7P7r1bSGUzf//////////9A3ZM3///9k/////////+v//////////x7///////////7///////////8D////if////////+0//////////////+O////////YP///////zb//+v///////////////7//Xru////////////////////1f//////////////////1P/+////////////////////////////////////////////////////////0P/////V5/////n/1Mv+//+l/////9T///////////////7////9///+6v///8T+/8T/////uBO33uAAAAq/SURBVHgBlNADlsNgFIbh2opt3tq2tf/1zP2Lo/HbJjn6niDyXdFYPJFMpTOZbC6XLxSjkX9ViifL5XKlUqHoDMOyLMfxQkH86zoqyQqFYxQUVaUz7FPgNUGP/mUeT6uqSgTVMC3bcV3PewuaX/iVkHCOKRXVDkKwqjW33mg0PSIQg/f1H+ctWcFoBFwI29CxbbfW6Kp11+71B4MhRxJaP3y7FIWhoNjBaBSOJzAFC6xOzYHZfLHoD0mc/+3XlOgl9RRWEI4maIAdTCaTcQAQromADYf85uvX2BYyL4CinACBcNzekcZ4tWC8XjwEfIT94bj9Yp9nEHg9ghmORoF1Ol8u58sVu93vH2TSZXfiWBgH8NN36zbukzCcIGEOgTOWhql7gyYkxTdGG1zqONTd1vWb7nMD6//393cfc75l4f0AGPX+X/jEfAuErx7B8y+hg3eUz+8PBIMhjg8LYji0hL2FJoz3dybHRocj/+vfbB4IXz16ZCKcVDQUCMY4jhfEeCKRiItRG5H0MK9e3UHA1HDq63+/v/8SAgQIYNAEJclKKMSh7+NxENREXKJHmVfuO3c0BIymU8v/2v+HZiQA8BiAx8+tKzIAMZ4PA5DoR9CtbremaXe0SdRDOvPPe/jYDEAWAfAelkjnJCWGyhfhexWSSIhijmJZzQjqIZ32/mMAt9D7PgB5SeD5qGRMbyBAB4JYIFk2mdQQYpTw9xiGPoQCsgYAi/zqvdnqyOclWSoWQ1BGLFgsymJcEAq5bBJilFEqQwmZoT83yDBMlmWzWeZW5T3kFkZW8zkSI4iZ+WJgfnVibXFdgQo2XiRxHAAgDGBza1DAttudZYF2M54KEjw0ma/RBEE4nYu+6MJEnWo4HLWc3HyB47ipBWERkGpvDvULYFkQgGABQPHg+vMONmOnrHWrtWvFMLpH7tQ6u00Sx7vPenqv1TIZQLtfwkeaxozs7Y20UAlAeDym5/vEorV9QGBUQ27YsbcEdZjXCZo0GYCu9wbAkXFD8H7v+Pj4ZA+EV688YNja2ClWxzAHaZPUaO3M3qgWJcVuKyi27jP9nNR7Nno4tdluby6jDjT3VxsXFxeXJyNovq9eMVWXvVrMV12uoq/BqYKkRCVevOKUAn/t6PbOa7Vz3UZDAZb25jQA9zTm0cbNxcU3IMB0SqXJb+fPYItcLBbyFcOqiu4hHr/iuVjw+jubXoOcP/v+OVSQev4D7IDN3tq4+fGnn3/59bfLk72RUnnq97lZV1HhuFjAF+ThhuEk4wIfiy1d8+QzsrbyB01lwZxGGofxrYxP7wucu9R39NwPlmUGbWTgbMNJDZjOZjZ1XZIQQWp0sB2KrETxO2yTC8S9biSV73H/NzS/sQjPj+f1g5GD7ksXb9x0RGOxLdiOzs7eq/EEL4iCxF3zDpw7dmzwej+j0et1Om2rc7BVpdPDuYT9ZNZeaXIPuU8djEQiwyOx6OhQMpncgW3zevwhIZVOZ0Qxm8tf+2f0GDtIMEwrYGf/Bcgmgw4UlPlAi21kpDAcKRaLpcLIULJcrpS3YdvlYDghpsfG0umxtJiVuPHOTjvjUhEqrZ2ykur/WEtzs1Gvh139yx/FZLJQKnpkeaJaqZVBUNmOTXJSLosEY1NTU2OZbI7z9lIaliVwE2Wy4iRptbQZmw4gQcvlQjJZK3nl6enpmdlqtQzMYfP5XE7MNPIgEHNhWT7KsKyK1pD9/e3t7YMLpNPUZDSYj55C+VppYprj8tMTVWRAgnAum2nEGw3CHBdY7GBdNE4qIL3Q2ko6caPNQCWXkkCtCoK8lN+oUKstY5yEBIgMAPMohSVeiLtYXGOn7K0LC1pD0wGTxaw/GI0uLS0laxUkyHMzE7MwDzU35g/zWbGRzWZhIfgEL6ZSKZxQuWiTpl2tbtcYjRRlsJ+KOhwr0aXk8uwMGLhpMFSWTzHYfBAqIHJSXuL5RIJHa5qmnYQKp2mN9ShlMJspk10TGQKDAwwVMABIUECCs8FwfoNpWfb7g6GEkALDUaXTh1vhCLXZmmxGi9VlPTswEltZgQ5IMTsxMwNLObBrFbt1VpZBB797vV7PVT8IBCSAJdiNw8VkslgsFL2bNfiLYIiuQIuVpWS5Ojs7W6kUzqxi249GirOIvr5eOBOLmw0IZb+637lz506fy7Vb4aSNizIYhmKOC7cv3HHcTdaAZGz/PWzbqVOFQqVSKjXycVQADEdZUqk4/T3cah9+f/q0wmWyxf0etIOjdy7cRoro3aWlqOOtn7AdZ84cchcKA329HpQPoVnkhcBrLIEM+xCn+320wXY/6JdBURuKrsA47gAOcP2Obdm5+5B7+GV+MQSAInBzt4vw+VCH70+rnazGZG56kAgF/LK3WBoouEfQSICHj+BaXT3khrjXI/sDi8EgCCSJH/9oN+PzMS6lQq3uJ3DaTrU1PRASiRC0kD2e3j537M5D4NFjdKUNw7ejFQwEg8EwIEmJJ+d34SyL46zTqWQ1VruJantQF3keFKHgov9q78CI43YXgF75V4pelEbxTcHak+MuDeNiGB9JsDgNAst6vV7nBUHg19fvxxev9na++bSru7t744melF/Gw408CMb/ImmccbkIJelzaWir6X79Wb0eFDYAg7/j4KHPznd1wwiArVB+M4/6B7nnL24oNDTucvmUTsKlsXZAfq2+Ns5JPOTX16FC5Ot33zr+UeNh2RJoVG/EJe7Ji+fPn7yl1EAFliRhJg49r689X/u/8bKGct2IwvCDMtCGmZljCDND/brdJpxUYebRMjNPmFXapd0GmpCPxjonE1vgkWa0Y2eSMZyTq2Xe/fvv03+N9/5tO7ncwGwsKPwy/MpTt531/uq/69GZpXwN+OyIbdqlcrn86Tlj11778ocf9l7+vuv5pUqllGNOEDjBzJefFz77DAwLH/cdv/r3Hs8NNOCBGXIHBKXKOfd9CIKxsyjxEiJj5zIYm1HkX/p4+2d/LRmGX1lcW5yPAPw5/C0EEcNM4ky5bFfH0/f3vvzh+4II4VE7E1DBWcg7arXaUPsLhQK8FZNHDq3ln5npkUzgmIxzSRWrVGhCyvHzx84fx7zKSTUTCeQyn57zL6RWu7Z7ZKpQ+G/jkrVoO5EZ+szn1NXazKCER8T4ee/UG41GlZgMIc0ifE6z2QTD2A+BnRv5adPSfTLgYej7TFJKtcZGAgkpaaNerzcwIR7SPIquAR4MHd85ARhOPLQpZ3IWx5eautQyDM8jJCEA58JLJJDyo/Ca+fmY/9YE3nFOObQl92IuZdxAK0UMMCDkVRsYcAOm4Y5/9vyS4NsP7Jg/fvuy3dIu97GUrrYIwBCyZELE0tzEF+WXBPPjf/jQtLXTun5MSCghYQIPkWWH4QGulGT04uzo6DzkGo45Z7Du75Q2DQUwxq4QSkAND3ChtaZYp17K52NDmoUhY7veTU8+48r4AQwcUAERZFE35o2rs1kQjN4XReyP8OQ9jq5HqQuhCvB4DuFSKKCNJPAgeDj+MLfg/d81d97Z9ozWIm4f83rpPVFe8qVYkH/YdKLozH0Pz9d+I0u4ZWmpLKUVSr20JHiT+f69B7pdXysi4AWVykNCWamrgc/m35QTbYAfLE8eK2qJlWFYwkolX4obdN57Mkx46OA5fMJrjxaLSnjJzs5HX9v92f8D/Ul7p0Qc3GAAAAAASUVORK5CYII="
+        class="user-img"
+        loading="lazy"
+      />
+      <textarea
+        class="commnet-text"
+        data-send
+        placeholder="Add a comment..."
+      ></textarea>
+      <button class="add-comment-btn" data-add-comment>send</button>
+    </section>
+
+    <div class="hystmodal" id="myModal" aria-hidden="true">
+      <div class="hystmodal__wrap">
+          <div class="hystmodal__window" role="dialog" aria-modal="true">
+            <h2 class="modal-header">Delet comment</h2>
+            <p class="modal-text">Are you sure you want to delete this comment? This will remove the comment and can't be undone.</p>
+            <div>
+              <button class="close-modal" data-hystclose>no, cancel</button>
+              <button  class="delete-btn" data-hystclose>yes, delete</button>
+            </div>
+          </div>
+      </div>
+  </div>
+
+    <template data-curretn-user-comment-card>
+      <div data-card data-id="">
+        <section class="comment-section">
+          <div class="comment-card" >
+            <div class="upvote-downvote" data-id="">
+              <img  data-upvoted="" class="upvote-btn" loading="lazy">
+              <span class="upvotes" data-upvotes></span>
+              <img  class="downvote-btn" data-downvoted="" alt="" loading="lazy">
+            </div>
+            <div>
+              <div class="comment-info">
+                <div class="user-info">
+                  <img 
+                  loading="lazy"
+                    class="user-img"
+                    data-img
+                  />
+                  <span class="name" data-name></span>
+                  <span class="you">you</span>
+                  <span class="comment-date" data-date></span>
+                </div>
+                <div class="edit-delete">
+                  <div class="delete">
+                    <img loading="lazy" data-delete-icon /> 
+                    <button class="show-modal" data-hystmodal="#myModal" data-id="" data-type="comment">
+                      Delete
+                    </button>
+                  </div>
+                  <div class="edit">
+                    <img  loading="lazy" data-edit-icon />
+                    <button class="edit-btn" data-edit="edit" data-id="">
+                      Edit
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="comment">
+                <p data-comment></p>
+                <textarea class="edit-comment hide"></textarea>
+              </div>
+              <button id="update-btn" class="update-btn hide" data-id=""> update</button>
+            </div>
+          </div>
+        </section>
+        <section class="reply-section" data-id="">
+        </section>
+      </div>
+    </template>
+
+    <template data-user-comment-card>
+      <div data-card data-id="">
+        <section class="comment-section" >
+          <div class="comment-card" >
+            <div class="upvote-downvote" data-id="">
+                <img loading="lazy" class="upvote-btn" data-upvoted="" alt="upvote">
+              <span class="upvotes" data-upvotes></span>
+                <img class="downvote-btn" data-downvoted=""  alt="downvote">
+            </div>
+            <div>
+              <div class="comment-info">
+                <div class="user-info">
+                  <img loading="lazy"
+                    class="user-img"
+                    data-img
+                  />
+                  <span class="name" data-name></span>
+                  <span class="comment-date" data-date></span>
+                </div>
+                <div class="reply">
+                  <button data-show-reply-card="show" data-id="">
+                    <img loading="lazy" data-show-reply-card="show" data-id="" data-reply-icon src="images/icon-reply.svg" alt="reply" /> Reply
+                  </button>
+                </div>
+              </div>
+              <div class="comment"> <p data-comment></p>
+              </div>
+            </div>
+          </div>
+          <section data-reply-eara="" class="add-reply-section hide-form">
+            <form>
+              <img
+              data-reply-eara-img
+              class="user-img"
+              loading="lazy"
+            />
+            <textarea data-textarea placeholder="Add a reply..."></textarea>
+            <input type="submit" data-name="" data-id="" class="add-reply-btn" value="Reply">
+            </form>
+          </section>
+        </section>
+        <section class="reply-section" data-id="">
+        </section>
+      </div>
+    </template>
+
+    <template data-user-reply-comment-card>
+    <div class="reply-comment-card" data-id="" data-card>
+      <div class="comment-card" >
+        <div class="upvote-downvote" data-id=""> 
+          <img loading="lazy" class="upvote-btn" data-reply="reply" data-upvoted="" alt="">
+          <span class="upvotes" data-upvotes></span>
+          <img loading="lazy" class="downvote-btn" data-reply="reply" data-downvoted="" alt="">
+        </div>
+        <div>
+          <div class="comment-info">
+            <div class="user-info">
+              <img
+              loading="lazy"
+                class="user-img"
+                data-img
+              />
+              <span class="name" data-name></span>
+              <span class="comment-date" data-date></span>
+            </div>
+            <div class="reply">
+              <button data-show-reply-card="show" data-id="">
+                <img data-show-reply-card="show" data-id="" data-reply-icon alt="reply" loading="lazy" /> Reply
+              </button>
+            </div>
+          </div>
+          <div class="comment">
+            <span class="reply-to">@</span><span class="reply-to" data-reply-to></span>
+            <p data-comment>
+            </p>
+          </div>
+        </div>
+      </div>
+      <section data-reply-eara="" class="add-reply-section hide-form">
+        <form >
+          <img
+          loading="lazy"
+          data-reply-eara-img
+          class="user-img"
+        />
+        <textarea data-textarea placeholder="Add a reply..."></textarea>
+        <input type="submit" data-id="" data-name=""  class="add-reply-to-a-reply-btn" value="Reply">
+        </form>
+      </section>
+    </div>
+    </template> 
+
+    <template data-currnt-user-reply-comment-card>
+      <div class="reply-comment-card" data-id="">
+        <div class="comment-card" >
+          <div class="upvote-downvote" data-id="">
+            <img loading="lazy" class="upvote-btn" data-reply="reply"  data-upvoted="" alt="">
+            <span class="upvotes" data-upvotes></span>
+            <img loading="lazy" class="downvote-btn" data-reply="reply" data-downvoted="" alt="">
+          </div>
+          <div>
+            <div class="comment-info">
+              <div class="user-info">
+                <img
+                loading="lazy"
+                  class="user-img"
+                  data-img
+                />
+                <span class="name" data-name></span>
+                <span class="you">you</span>
+                <span class="comment-date" data-date></span>
+              </div>
+              <div class="edit-delete">
+                <div class="delete">
+                  <img loading="lazy"  data-delete-icon /> 
+                  <button class="show-modal" data-hystmodal="#myModal" data-id="" data-type="reply">
+                    Delete
+                  </button>
+                </div>
+                <div class="edit">
+                  <img loading="lazy" data-edit-icon />
+                  <button class="edit-btn" data-edit="edit" data-id="">
+                    Edit
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="comment">
+              <span class="reply-to">@</span><span class="reply-to" data-reply-to></span>
+              <p data-comment></p>
+              <textarea class="edit-comment hide"></textarea>
+            </div>
+            <button id="update-reply-btn" class="update-btn .update-reply-btn hide" data-id=""> update</button>
+          </div>
+        </div>
+      </div>
+    </template>
+    
+    
+  </body>
+</html>
+
+
